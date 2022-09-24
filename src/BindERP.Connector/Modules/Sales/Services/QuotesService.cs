@@ -6,7 +6,7 @@ using BindERP.Connector.Modules.Sales.Records;
 
 namespace BindERP.Connector.Modules.Sales.Services;
 
-internal class QuotesService : BaseService, IQuotesService
+public class QuotesService : BaseService, IQuotesService
 {
     public QuotesService(IBindConnection connection) 
         : base(connection)

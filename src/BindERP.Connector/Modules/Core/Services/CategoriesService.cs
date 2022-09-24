@@ -8,7 +8,7 @@ namespace BindERP.Connector.Modules.Core.Services;
 /// <summary>
 /// Representa el servicio de las categorias.
 /// </summary>
-internal class CategoriesService : BaseService, ICategoriesService
+public class CategoriesService : BaseService, ICategoriesService
 {
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="CategoriesService"/>.

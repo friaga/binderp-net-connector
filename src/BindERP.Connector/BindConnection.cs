@@ -2,7 +2,7 @@
 
 namespace BindERP.Connector
 {
-    internal class BindConnection : IDisposable, IBindConnection
+    public class BindConnection : IDisposable, IBindConnection
     {
         private HttpClient? client;
         private bool disposed;

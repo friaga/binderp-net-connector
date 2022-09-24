@@ -8,7 +8,7 @@ namespace BindERP.Connector.Modules.Accounting.Services;
 /// <summary>
 /// Representa el servicio de las pólizas contables.
 /// </summary>
-internal class JournalsService : BaseService, IJournalsService
+public class JournalsService : BaseService, IJournalsService
 {
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="JournalsService"/>.

@@ -8,7 +8,7 @@ namespace BindERP.Connector.Modules.Core.Services;
 /// <summary>
 /// Representa el servicio de las ciudades.
 /// </summary>
-internal class CitiesService : BaseService, ICitiesService
+public class CitiesService : BaseService, ICitiesService
 {
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="CitiesService"/>.

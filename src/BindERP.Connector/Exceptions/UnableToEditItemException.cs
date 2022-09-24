@@ -3,7 +3,7 @@
 namespace BindERP.Connector.Exceptions
 {
     [Serializable]
-    internal class UnableToEditItemException : Exception
+    public class UnableToEditItemException : Exception
     {
         public UnableToEditItemException()
         {

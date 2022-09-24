@@ -6,7 +6,7 @@ using BindERP.Connector.Modules.Sales.Records;
 
 namespace BindERP.Connector.Modules.Sales.Services;
 
-internal class FormulasService : BaseService, IFormulasService
+public class FormulasService : BaseService, IFormulasService
 {
     public FormulasService(IBindConnection connection) 
         : base(connection)

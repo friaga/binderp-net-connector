@@ -8,7 +8,7 @@ namespace BindERP.Connector.Modules.Treasury.Services;
 /// <summary>
 /// Representa el servicio de las cuentas de banco.
 /// </summary>
-internal class BankAccountsService : BaseService, IBankAccountsService
+public class BankAccountsService : BaseService, IBankAccountsService
 {
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="BankAccountsService"/>.

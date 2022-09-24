@@ -2,7 +2,7 @@
 
 namespace BindERP.Connector.Modules.Treasury;
 
-internal class TreasuryModule : ITreasuryModule
+public class TreasuryModule : ITreasuryModule
 {
     public TreasuryModule(IBankAccountsService accounts)
     {

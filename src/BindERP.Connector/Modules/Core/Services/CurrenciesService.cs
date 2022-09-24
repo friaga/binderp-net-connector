@@ -8,7 +8,7 @@ namespace BindERP.Connector.Modules.Core.Services;
 /// <summary>
 /// Representa el servicio de los tipos de cambio.
 /// </summary>
-internal class CurrenciesService : BaseService, ICurrenciesService
+public class CurrenciesService : BaseService, ICurrenciesService
 {
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="CurrenciesService"/>.

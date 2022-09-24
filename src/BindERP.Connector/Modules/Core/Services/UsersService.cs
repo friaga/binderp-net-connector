@@ -8,7 +8,7 @@ namespace BindERP.Connector.Modules.Core.Services;
 /// <summary>
 /// Representa el servicio de los usuarios.
 /// </summary>
-internal class UsersService : BaseService, IUsersService
+public class UsersService : BaseService, IUsersService
 {
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="UsersService"/>.

@@ -8,7 +8,7 @@ namespace BindERP.Connector.Modules.Core.Services;
 /// <summary>
 /// Representa el servicio de las listas de precios.
 /// </summary>
-internal class PriceListsService : BaseService, IPriceListsService
+public class PriceListsService : BaseService, IPriceListsService
 {
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="PriceListsService"/>.

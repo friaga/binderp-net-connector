@@ -8,7 +8,7 @@ namespace BindERP.Connector.Modules.Core.Services;
 /// <summary>
 /// Representa el servicio de los perfiles.
 /// </summary>
-internal class ProfilesService : BaseService, IProfilesService
+public class ProfilesService : BaseService, IProfilesService
 {
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="ProfilesService"/>.

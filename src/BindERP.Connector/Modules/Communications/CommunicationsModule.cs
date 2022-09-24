@@ -2,7 +2,7 @@
 
 namespace BindERP.Connector.Modules.Communications;
 
-internal class CommunicationsModule : ICommunicationsModule
+public class CommunicationsModule : ICommunicationsModule
 {
     public CommunicationsModule(IActivitiesService activities, ICommentsService comments)
     {

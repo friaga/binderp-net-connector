@@ -8,7 +8,7 @@ namespace BindERP.Connector.Modules.Core.Services;
 /// <summary>
 /// Representa el servicio de las sucursales.
 /// </summary>
-internal class LocationsService : BaseService, ILocationsService
+public class LocationsService : BaseService, ILocationsService
 {
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="LocationsService"/>.

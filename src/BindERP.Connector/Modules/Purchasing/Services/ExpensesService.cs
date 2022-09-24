@@ -5,7 +5,7 @@ using BindERP.Connector.Modules.Purchasing.Entities;
 
 namespace BindERP.Connector.Modules.Purchasing.Services;
 
-internal class ExpensesService : BaseService, IExpensesService
+public class ExpensesService : BaseService, IExpensesService
 {
     public ExpensesService(IBindConnection connection) 
         : base(connection)

@@ -11,7 +11,7 @@ using BindERP.Connector.Modules.Purchasing.Records;
 
 namespace BindERP.Connector.Modules.Purchasing.Services;
 
-internal class PurchaseOrdersService : BaseService, IPurchaseOrdersService
+public class PurchaseOrdersService : BaseService, IPurchaseOrdersService
 {
     public PurchaseOrdersService(IBindConnection connection) 
         : base(connection)

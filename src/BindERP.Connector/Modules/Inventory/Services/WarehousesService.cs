@@ -5,7 +5,7 @@ using BindERP.Connector.Modules.Inventory.Entities;
 
 namespace BindERP.Connector.Modules.Inventory.Services;
 
-internal class WarehousesService : BaseService, IWarehousesService
+public class WarehousesService : BaseService, IWarehousesService
 {
     public WarehousesService(IBindConnection connection) 
         : base(connection)

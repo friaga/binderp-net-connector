@@ -18,10 +18,10 @@ namespace BindERP.Connector.Extensions
         /// <exception cref="TaskCanceledException">Lanzada cuando la operacion es cancelada.</exception>
         public static async Task<T?> GetAsync<T>(this HttpClient client, string requestUri, CancellationToken cancellationToken = default)
         {
-            var response = await client.GetAsync(requestUri, cancellationToken);
+            var response = await client.GetAsync(requestUri, cancellationToken).ConfigureAwait(false);
             if (!response.IsSuccessStatusCode)
             {
-                var raw = await response.Content.ReadAsStringAsync(cancellationToken);
+                var raw = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
                 if (raw is not null)
                 {
                     var error = JsonConvert.DeserializeObject<ErrorRecord>(raw);
@@ -34,7 +34,7 @@ namespace BindERP.Connector.Extensions
                 throw new InvalidOperationException("Ha ocurrido un error al intentar obtener una solicitud.");
             }
 
-            var json = await response.Content.ReadAsStringAsync(cancellationToken);
+            var json = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
             if (string.IsNullOrWhiteSpace(json))
             {
                 throw new InvalidOperationException("Ha ocurrido un error al intentar obtener un cliente.");
@@ -71,13 +71,13 @@ namespace BindERP.Connector.Extensions
 
             var filteredUri = new Uri($"{requestUri}{filter}", UriKind.Relative);
 
-            var response = await client.GetAsync(filteredUri, cancellationToken);
+            var response = await client.GetAsync(filteredUri, cancellationToken).ConfigureAwait(false);
             if (!response.IsSuccessStatusCode)
             {
                 throw new InvalidOperationException("Ha ocurrido un error al intentar obtener un cliente.");
             }
 
-            var json = await response.Content.ReadAsStringAsync(cancellationToken);
+            var json = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
             if (string.IsNullOrWhiteSpace(json))
             {
                 throw new InvalidOperationException("Ha ocurrido un error al intentar obtener un cliente.");

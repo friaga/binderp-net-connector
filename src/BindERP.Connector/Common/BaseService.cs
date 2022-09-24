@@ -3,7 +3,7 @@
 /// <summary>
 /// Representa un servicio base de los clientes de Bind.
 /// </summary>
-internal abstract class BaseService : IDisposable
+public abstract class BaseService : IDisposable
 {
     /// <summary>
     /// Representa un valor que indica si el servicio ha sido liberado correctamente o no.
@@ -17,7 +17,7 @@ internal abstract class BaseService : IDisposable
     /// </summary>
     /// <param name="connection">El cliente tipificado inicializado en el setup.</param>
     /// <exception cref="ArgumentNullException">Lanzada cuando el cliente no ha sido inicializado correctamente.</exception>
-    public BaseService(IBindConnection connection)
+    protected BaseService(IBindConnection connection)
     {
         this.connection = connection ?? throw new ArgumentNullException(nameof(connection));
     }

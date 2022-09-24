@@ -2,7 +2,7 @@
 
 namespace BindERP.Connector.Modules.Sales;
 
-internal class SalesModule : ISalesModule
+public class SalesModule : ISalesModule
 {
     public SalesModule(ICustomersService customers, IFormulasService formulas, IInvoicesService invoices, IProductsService products, IProspectsService prospects, IQuotesService quotes, ISalesOrdersService orders, IServicesService services)
     {

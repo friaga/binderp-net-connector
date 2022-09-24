@@ -54,8 +54,8 @@ namespace BindERP.Connector
             Assembly assembly = typeof(IBindClient).Assembly;
 
             assembly.GetTypes()
-                    .Where(a => a.Name.EndsWith("Service") && !a.IsAbstract && !a.IsInterface)
-                    .Select(a => new { ImplementationType = a, ServiceTypes = a.GetInterfaces().Where(i => i.Name.EndsWith("Service")).ToList() })
+                    .Where(a => a.Name.EndsWith("Service", StringComparison.OrdinalIgnoreCase) && !a.IsAbstract && !a.IsInterface)
+                    .Select(a => new { ImplementationType = a, ServiceTypes = a.GetInterfaces().Where(i => i.Name.EndsWith("Service", StringComparison.OrdinalIgnoreCase)).ToList() })
                     .ToList()
                     .ForEach(registration =>
                     {

@@ -8,7 +8,7 @@ namespace BindERP.Connector.Modules.Core.Services;
 /// <summary>
 /// Representa el servicio de las entidades federativas.
 /// </summary>
-internal class StatesService : BaseService, IStatesService
+public class StatesService : BaseService, IStatesService
 {
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="StatesService"/>.

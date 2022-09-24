@@ -2,7 +2,7 @@
 
 namespace BindERP.Connector.Modules.Accounting;
 
-internal class AccountingModule : IAccountingModule
+public class AccountingModule : IAccountingModule
 {
     public AccountingModule(IAccountCategoriesService categories, IAccountsService accounts, IJournalsService journals)
     {

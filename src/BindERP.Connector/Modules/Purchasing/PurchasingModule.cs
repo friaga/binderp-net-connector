@@ -2,7 +2,7 @@
 
 namespace BindERP.Connector.Modules.Purchasing;
 
-internal class PurchasingModule : IPurchasingModule
+public class PurchasingModule : IPurchasingModule
 {
     public PurchasingModule(IExpensesService expenses, IProvidersService providers, IPurchaseOrdersService orders)
     {

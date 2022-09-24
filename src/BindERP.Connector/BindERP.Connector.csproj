@@ -4,6 +4,17 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
+    <AnalysisLevel>6.0-recommended</AnalysisLevel>
+    <NeutralLanguage>es</NeutralLanguage>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>BindERP.Connector</Title>
+    <Company>Samana Software</Company>
+    <Authors>Roberto Ramírez</Authors>
+    <Description>An unofficial Bind ERP .NET connector for the public API.</Description>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/friaga/binderp-net-connector</RepositoryUrl>
+    <PackageTags>BindERP</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

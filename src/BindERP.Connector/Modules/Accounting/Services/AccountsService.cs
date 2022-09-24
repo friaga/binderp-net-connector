@@ -8,7 +8,7 @@ namespace BindERP.Connector.Modules.Accounting.Services;
 /// <summary>
 /// Representa el servicio de las cuentas contables.
 /// </summary>
-internal class AccountsService : BaseService, IAccountsService
+public class AccountsService : BaseService, IAccountsService
 {
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="AccountsService"/>.

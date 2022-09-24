@@ -3,7 +3,7 @@
 namespace BindERP.Connector.Exceptions
 {
     [Serializable]
-    internal class UnableToSerializeException : Exception
+    public class UnableToSerializeException : Exception
     {
         public UnableToSerializeException()
         {

@@ -2,7 +2,7 @@
 
 namespace BindERP.Connector.Modules.Core;
 
-internal class CoreModule : ICoreModule
+public class CoreModule : ICoreModule
 {
     public CoreModule(IBanksService banks, ICategoriesService categories, ICitiesService cities, ICurrenciesService currencies, ILocationsService locations, IPriceListsService prices, IProfilesService profiles, ISeriesService series, IStatesService states, IUsersService users)
     {

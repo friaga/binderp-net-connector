@@ -12,7 +12,7 @@ namespace BindERP.Connector.Modules.Webhooks.Services;
 /// <summary>
 /// Representa el servicio de subscripciones.
 /// </summary>
-internal class SubscriptionsService : BaseService, ISubscriptionsService
+public class SubscriptionsService : BaseService, ISubscriptionsService
 {
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="AccountingJournalsService"/>.

@@ -8,7 +8,7 @@ namespace BindERP.Connector.Modules.Communications.Services;
 /// <summary>
 /// Representa el servicio de actividades.
 /// </summary>
-internal class ActivitiesService : BaseService, IActivitiesService
+public class ActivitiesService : BaseService, IActivitiesService
 {
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="ActivitiesService"/>.

@@ -2,7 +2,7 @@
 
 namespace BindERP.Connector.Modules.Webhooks;
 
-internal class WebhooksModule : IWebhooksModule
+public class WebhooksModule : IWebhooksModule
 {
     public WebhooksModule(ISubscriptionsService subscriptions)
     {

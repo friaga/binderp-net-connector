@@ -2,7 +2,7 @@
 
 namespace BindERP.Connector.Modules.Inventory;
 
-internal class InventoryModule : IInventoryModule
+public class InventoryModule : IInventoryModule
 {
     public InventoryModule(IWarehousesService warehouses)
     {

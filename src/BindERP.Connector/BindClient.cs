@@ -9,7 +9,7 @@ using BindERP.Connector.Modules.Webhooks;
 
 namespace BindERP.Connector;
 
-internal class BindClient : IBindClient
+public class BindClient : IBindClient
 {
     public BindClient(IAccountingModule accounting, ICoreModule core, ICommunicationsModule communications, IInventoryModule inventory, IPurchasingModule purchasing, ISalesModule sales, ITreasuryModule treasury, IWebhooksModule webhooks)
     {

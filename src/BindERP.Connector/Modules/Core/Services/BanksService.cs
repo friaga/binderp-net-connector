@@ -8,7 +8,7 @@ namespace BindERP.Connector.Modules.Core.Services;
 /// <summary>
 /// Representa el servicio de los bancos.
 /// </summary>
-internal class BanksService : BaseService, IBanksService
+public class BanksService : BaseService, IBanksService
 {
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="BanksService"/>.

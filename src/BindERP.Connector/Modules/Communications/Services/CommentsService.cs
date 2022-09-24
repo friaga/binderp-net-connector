@@ -8,7 +8,7 @@ namespace BindERP.Connector.Modules.Communications.Services;
 /// <summary>
 /// Representa el servicio de los comentarios.
 /// </summary>
-internal class CommentsService : BaseService, ICommentsService
+public class CommentsService : BaseService, ICommentsService
 {
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="CommentsService"/>.

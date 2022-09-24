@@ -8,7 +8,7 @@ namespace BindERP.Connector.Modules.Core.Services;
 /// <summary>
 /// Representa el servicio de las series.
 /// </summary>
-internal class SeriesService : BaseService, ISeriesService
+public class SeriesService : BaseService, ISeriesService
 {
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="SeriesService"/>.
