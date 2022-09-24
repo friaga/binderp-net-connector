@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindERP.Connector", "BindERP.Connector\BindERP.Connector.csproj", "{BF8A7012-C929-411D-A6D7-350A5050BFC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindERP.Connector.Tests", "BindERP.Connector.Tests\BindERP.Connector.Tests.csproj", "{F54FD740-E1C0-4A49-A76A-3C22B2D864C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF8A7012-C929-411D-A6D7-350A5050BFC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF8A7012-C929-411D-A6D7-350A5050BFC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF8A7012-C929-411D-A6D7-350A5050BFC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF8A7012-C929-411D-A6D7-350A5050BFC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F54FD740-E1C0-4A49-A76A-3C22B2D864C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F54FD740-E1C0-4A49-A76A-3C22B2D864C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F54FD740-E1C0-4A49-A76A-3C22B2D864C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F54FD740-E1C0-4A49-A76A-3C22B2D864C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C32BACBB-D7CD-4396-97B2-256828BDFD23}
+	EndGlobalSection
+EndGlobal

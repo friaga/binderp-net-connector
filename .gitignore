@@ -3,3 +3,8 @@
 ################################################################################
 
 /.vs
+/src/.vs/binderp-net-connector/v17
+/src/BindERP.Connector/bin
+/src/BindERP.Connector/obj
+/src/BindERP.Connector.Tests/bin
+/src/BindERP.Connector.Tests/obj
