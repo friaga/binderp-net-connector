@@ -4,12 +4,11 @@ public record Product
 {
     public Product()
     {
-        this.Prices           = new List<ProductPrice>();
         this.Inventories      = new List<ProductInventory>();
         this.AlternativeUnits = new List<ProductUnit>();
     }
 
-    public Guid? ID
+    public Guid ID
     {
         get;
         set;
@@ -69,7 +68,7 @@ public record Product
         set;
     }
 
-public string? Category1
+    public string? Category1
     {
         get;
         set;
@@ -183,9 +182,10 @@ public string? Category1
         set;
     }
 
-    public IEnumerable<ProductPrice> Prices
+    public ProductPrice? Prices
     {
         get;
+        set;
     }
 
     public IEnumerable<ProductInventory> Inventories

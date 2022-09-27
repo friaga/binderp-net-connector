@@ -15,6 +15,9 @@
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/friaga/binderp-net-connector</RepositoryUrl>
     <PackageTags>BindERP</PackageTags>
+    <AssemblyVersion>1.0.2</AssemblyVersion>
+    <FileVersion>1.0.2</FileVersion>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>

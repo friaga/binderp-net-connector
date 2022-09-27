@@ -8,13 +8,13 @@ public record ProductInventory
         set;
     }
 
-    public long? Min
+    public decimal? Min
     {
         get;
         set;
     }
 
-    public long? Max
+    public decimal? Max
     {
         get;
         set;

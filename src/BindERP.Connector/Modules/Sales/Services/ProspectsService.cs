@@ -39,6 +39,6 @@ public class ProspectsService : BaseService, IProspectsService
     /// <exception cref="TaskCanceledException">Lanzada cuando la operación es cancelada.</exception>
     public Task<Prospect?> GetProspectAsync(Guid prospectID, CancellationToken cancellationToken = default)
     {
-        return this.HttpClient.GetAsync<Prospect>($"/api/Prospect/{prospectID}", cancellationToken);
+        return this.HttpClient.GetAsync<Prospect>($"/api/Prospects/{prospectID}", cancellationToken);
     }
 }
