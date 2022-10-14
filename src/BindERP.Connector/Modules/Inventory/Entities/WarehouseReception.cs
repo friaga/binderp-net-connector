@@ -8,7 +8,7 @@ public record WarehouseReception
         set;
     }
 
-    public long? Number
+    public string? Number
     {
         get;
         set;

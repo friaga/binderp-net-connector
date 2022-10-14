@@ -2,7 +2,7 @@
 
 public record Provider
 {
-    public Guid? ID
+    public Guid ID
     {
         get;
         set;
