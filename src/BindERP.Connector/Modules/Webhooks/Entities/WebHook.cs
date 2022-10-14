@@ -2,7 +2,7 @@
 
 public record WebHook
 {
-    public Guid ID
+    public string? ID
     {
         get;
         set;
