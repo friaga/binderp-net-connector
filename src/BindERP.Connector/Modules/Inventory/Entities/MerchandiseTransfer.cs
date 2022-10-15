@@ -7,7 +7,7 @@ public record MerchandiseTransfer
         this.ProductsTransfers = new List<ProductTransfer>();
     }
 
-    public string? ID
+    public Guid ID
     {
         get;
         set;
@@ -60,7 +60,7 @@ public record MerchandiseTransfer
         set;
     }
 
-    public string? Status
+    public int? Status
     {
         get;
         set;
