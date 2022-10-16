@@ -18,7 +18,7 @@ namespace BindERP.Connector
             services.AddOptions<BindOptions>()
                     .Configure(options =>
                     {
-                        options.EndpointUri     = "https://api-integration.sharemanagement.app";
+                        options.EndpointUri     = "https://api.bind.com.mx";
                         options.EndpointKey     = string.Empty;
                         options.SubscriptionKey = string.Empty;
                     });
