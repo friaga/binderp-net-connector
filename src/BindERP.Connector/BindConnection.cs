@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Options;
+﻿using BindERP.Connector.Modules.Webhooks.Entities;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json.Linq;
 
 namespace BindERP.Connector
 {
@@ -10,6 +12,15 @@ namespace BindERP.Connector
         private readonly BindOptions options;
 
         private readonly IHttpClientFactory factory;
+
+        private const string DefaultEndpointUri = "https://api.bind.com.mx";
+
+
+        private string? endpointKey;
+
+        private string? subscriptionKey;
+
+        private string? endpointUri;
 
         public BindConnection(IHttpClientFactory factory, IOptions<BindOptions> options)
         {
@@ -24,15 +35,15 @@ namespace BindERP.Connector
                 return this.client;
             }
 
-            this.client = factory.CreateClient("bind-api-client");
+            this.client      = factory.CreateClient("bind-api-client");
 
-            var endpoint     = options.EndpointUri ?? string.Empty;
-            var token        = options.EndpointKey ?? string.Empty;
-            var subscription = options.SubscriptionKey ?? string.Empty;
+            var endpoint     = endpointUri             ?? options.EndpointUri     ?? DefaultEndpointUri;
+            var token        = endpointKey             ?? options.EndpointKey     ?? string.Empty;
+            var subscription = subscriptionKey         ?? options.SubscriptionKey ?? string.Empty;
 
-            if (!Uri.TryCreate(endpoint, UriKind.Absolute, out var endpointUri))
+            if (!Uri.TryCreate(endpoint, UriKind.Absolute, out var endpointBaseAddress))
             {
-                endpointUri = new Uri("https://api.bind.com.mx", UriKind.Absolute);
+                endpointBaseAddress = new Uri(DefaultEndpointUri, UriKind.Absolute);
             }
 
             token        = token.Trim();
@@ -43,7 +54,7 @@ namespace BindERP.Connector
                 throw new InvalidOperationException("The Bind ERP API key is not valid. Please ensure it's in the appropiate configuration section.");
             }
 
-            this.client.BaseAddress = endpointUri;
+            this.client.BaseAddress = endpointBaseAddress;
             this.client.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
 
             if (!string.IsNullOrWhiteSpace(subscription))
@@ -85,6 +96,79 @@ namespace BindERP.Connector
             // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
+        }
+
+        public void SetEndpointKey(string endpointKey)
+        {
+            if (string.IsNullOrWhiteSpace(endpointKey))
+            {
+                throw new ArgumentNullException(nameof(endpointKey), "The Bind ERP API key is not valid.");
+            }
+
+            this.endpointKey = endpointKey;
+            if (this.client is not null)
+            {
+                if (this.client.DefaultRequestHeaders.Contains("Authorization"))
+                {
+                    this.client.DefaultRequestHeaders.Remove("Authorization");
+                }
+
+                this.client.DefaultRequestHeaders.Add("Authorization", $"Bearer {endpointKey}");
+            }
+        }
+
+        public void SetSubscriptionKey(string subscriptionKey)
+        {
+            if (string.IsNullOrWhiteSpace(subscriptionKey))
+            {
+                throw new ArgumentNullException(nameof(subscriptionKey), "The Bind ERP Subscription key is not valid.");
+            }
+
+            this.subscriptionKey = subscriptionKey;
+            if (this.client is not null)
+            {
+                if (this.client.DefaultRequestHeaders.Contains("Ocp-Apim-Subscription-Key"))
+                {
+                    this.client.DefaultRequestHeaders.Remove("Ocp-Apim-Subscription-Key");
+                }
+
+                this.client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", $"{subscriptionKey}");
+            }
+        }
+
+        public void SetEndpointUri(string endpointUri)
+        {
+            if (string.IsNullOrWhiteSpace(endpointUri))
+            {
+                throw new ArgumentNullException(nameof(endpointUri), "The Bind ERP Endpoint URL is required.");
+            }
+
+            if (!Uri.TryCreate(endpointUri, UriKind.Absolute, out var endpoint))
+            {
+                throw new ArgumentException("The Bind ERP Endpoint URL is not absolute.", nameof(endpointUri));
+            }
+
+            this.endpointUri = endpointUri;
+
+            if (this.client is not null)
+            {
+                this.client.BaseAddress = endpoint;
+            }
+        }
+
+        public void SetEndpointUri(Uri endpointUri)
+        {
+            if (!endpointUri.IsAbsoluteUri)
+            {
+                throw new ArgumentException("The Bind ERP Endpoint URL is not absolute.", nameof(endpointUri));
+            }
+
+            this.endpointUri = endpointUri.ToString();
+
+            if (this.client is not null)
+            {
+                this.client.BaseAddress = endpointUri;
+            }
         }
     }
 }

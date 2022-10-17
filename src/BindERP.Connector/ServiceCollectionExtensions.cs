@@ -40,16 +40,16 @@ namespace BindERP.Connector
         private static void RegisterBindServices(IServiceCollection services)
         {
             services.AddHttpClient("bind-api-client");
-            services.AddTransient<IBindConnection, BindConnection>();
-            services.AddTransient<IAccountingModule, AccountingModule>();
-            services.AddTransient<ICommunicationsModule, CommunicationsModule>();
-            services.AddTransient<ICoreModule, CoreModule>();
-            services.AddTransient<IInventoryModule, InventoryModule>();
-            services.AddTransient<IPurchasingModule, PurchasingModule>();
-            services.AddTransient<ISalesModule, SalesModule>();
-            services.AddTransient<ITreasuryModule, TreasuryModule>();
-            services.AddTransient<IWebhooksModule, WebhooksModule>();
-            services.AddTransient<IBindClient, BindClient>();
+            services.AddScoped<IBindConnection, BindConnection>();
+            services.AddScoped<IAccountingModule, AccountingModule>();
+            services.AddScoped<ICommunicationsModule, CommunicationsModule>();
+            services.AddScoped<ICoreModule, CoreModule>();
+            services.AddScoped<IInventoryModule, InventoryModule>();
+            services.AddScoped<IPurchasingModule, PurchasingModule>();
+            services.AddScoped<ISalesModule, SalesModule>();
+            services.AddScoped<ITreasuryModule, TreasuryModule>();
+            services.AddScoped<IWebhooksModule, WebhooksModule>();
+            services.AddScoped<IBindClient, BindClient>();
 
             Assembly assembly = typeof(IBindClient).Assembly;
 
