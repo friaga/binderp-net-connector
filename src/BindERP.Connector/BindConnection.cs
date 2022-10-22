@@ -1,4 +1,5 @@
 ﻿using BindERP.Connector.Modules.Webhooks.Entities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Linq;
 
@@ -30,6 +31,8 @@ namespace BindERP.Connector
 
         public HttpClient GetClient()
         {
+            this.ThrowIfDisposed();
+
             if (this.client is not null)
             {
                 return this.client;
@@ -65,8 +68,17 @@ namespace BindERP.Connector
             return this.client;
         }
 
+        protected void ThrowIfDisposed()
+        {
+            if (this.disposed)
+            { 
+                throw new ObjectDisposedException("BindConnection");
+            }
+        }
+
         protected virtual void Dispose(bool disposing)
         {
+            this.ThrowIfDisposed();
             if (!disposed)
             {
                 if (disposing)
@@ -100,6 +112,8 @@ namespace BindERP.Connector
 
         public void SetEndpointKey(string endpointKey)
         {
+            this.ThrowIfDisposed();
+
             if (string.IsNullOrWhiteSpace(endpointKey))
             {
                 throw new ArgumentNullException(nameof(endpointKey), "The Bind ERP API key is not valid.");
@@ -119,6 +133,8 @@ namespace BindERP.Connector
 
         public void SetSubscriptionKey(string subscriptionKey)
         {
+            this.ThrowIfDisposed();
+
             if (string.IsNullOrWhiteSpace(subscriptionKey))
             {
                 throw new ArgumentNullException(nameof(subscriptionKey), "The Bind ERP Subscription key is not valid.");
@@ -138,6 +154,8 @@ namespace BindERP.Connector
 
         public void SetEndpointUri(string endpointUri)
         {
+            this.ThrowIfDisposed();
+
             if (string.IsNullOrWhiteSpace(endpointUri))
             {
                 throw new ArgumentNullException(nameof(endpointUri), "The Bind ERP Endpoint URL is required.");
@@ -158,6 +176,7 @@ namespace BindERP.Connector
 
         public void SetEndpointUri(Uri endpointUri)
         {
+            this.ThrowIfDisposed();
             if (!endpointUri.IsAbsoluteUri)
             {
                 throw new ArgumentException("The Bind ERP Endpoint URL is not absolute.", nameof(endpointUri));

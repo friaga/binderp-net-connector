@@ -4,7 +4,7 @@ using BindERP.Connector.Modules.Accounting.Entities;
 namespace BindERP.Connector.Modules.Accounting.Contracts;
 
 /// <summary>
-/// 
+/// Representa el servicio de las cuentas contables.
 /// </summary>
 public interface IAccountsService
 {
